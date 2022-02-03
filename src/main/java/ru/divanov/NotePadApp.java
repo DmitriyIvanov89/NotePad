@@ -6,9 +6,12 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import ru.divanov.controllers.Controller;
+
+import java.io.IOException;
 
 public class NotePadApp extends Application {
-    private final String TITLE = "NotePad";
+    private Stage primaryStage;
 
     public static void main(String[] args) {
         launch(args);
@@ -16,15 +19,27 @@ public class NotePadApp extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+        this.primaryStage = primaryStage;
+        initRoot();
+    }
+
+    private void initRoot() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/NotePad.fxml"));
             BorderPane rootLayOut = loader.load();
             primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/icon.png")));
-            primaryStage.setTitle(TITLE);
+            primaryStage.setTitle("NotePad");
             primaryStage.setScene(new Scene(rootLayOut));
+            Controller controller = loader.getController();
+            controller.setMainApp(this);
+            controller.setTextArea();
             primaryStage.show();
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public Stage getPrimaryStage() {
+        return primaryStage;
     }
 }
