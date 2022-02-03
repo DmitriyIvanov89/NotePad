@@ -11,6 +11,7 @@ import java.io.*;
 public class Controller {
 
     private NotePadApp mainApp;
+    @FXML
     private TextArea textArea;
 
     public void setMainApp(NotePadApp mainApp) {
@@ -31,7 +32,7 @@ public class Controller {
         fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
         File selectedFile = fileChooser.showOpenDialog(mainApp.getPrimaryStage());
         if (selectedFile != null) {
-            textArea.setText(loadFromFile(selectedFile));
+            textArea.appendText(loadFromFile(selectedFile));
             mainApp.getPrimaryStage().setTitle("NotePad" + selectedFile.getName());
         }
     }
