@@ -32,7 +32,6 @@ public class NotePadApp extends Application {
             primaryStage.setScene(new Scene(rootLayOut));
             Controller controller = loader.getController();
             controller.setMainApp(this);
-            controller.setTextArea();
             primaryStage.show();
         } catch (IOException e) {
             e.printStackTrace();

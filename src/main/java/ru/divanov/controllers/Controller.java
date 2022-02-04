@@ -12,14 +12,14 @@ public class Controller {
 
     private NotePadApp mainApp;
     @FXML
-    private TextArea textArea;
+    private TextArea textAreaId = new TextArea();
 
     public void setMainApp(NotePadApp mainApp) {
         this.mainApp = mainApp;
     }
 
     public void setTextArea(TextArea textArea) {
-        this.textArea = textArea;
+        this.textAreaId = textArea;
     }
 
     @FXML
@@ -32,8 +32,8 @@ public class Controller {
         fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
         File selectedFile = fileChooser.showOpenDialog(mainApp.getPrimaryStage());
         if (selectedFile != null) {
-            textArea.appendText(loadFromFile(selectedFile));
-            mainApp.getPrimaryStage().setTitle("NotePad" + selectedFile.getName());
+            textAreaId.setText(loadFromFile(selectedFile));
+            mainApp.getPrimaryStage().setTitle("NotePad - " + selectedFile.getName());
         }
     }
 
