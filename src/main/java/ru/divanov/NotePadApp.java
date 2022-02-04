@@ -11,6 +11,11 @@ import ru.divanov.controllers.Controller;
 import java.io.IOException;
 
 public class NotePadApp extends Application {
+    /**
+     * Refactor initRoot method
+     * Application title in const
+     */
+
     private Stage primaryStage;
 
     public static void main(String[] args) {

@@ -49,6 +49,7 @@ public class Controller {
         File file = fileChooser.showSaveDialog(mainApp.getPrimaryStage());
         if (file != null) {
             saveTextToFile(file, textAreaId.getText());
+            mainApp.getPrimaryStage().setTitle("NodePad - " + file.getName());
         }
 
     }
