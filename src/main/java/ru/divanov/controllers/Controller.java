@@ -7,6 +7,7 @@ import javafx.stage.FileChooser;
 import ru.divanov.NotePadApp;
 import ru.divanov.service.DataLoader;
 import ru.divanov.service.DataSaver;
+
 import java.io.*;
 
 public class Controller {
@@ -25,7 +26,7 @@ public class Controller {
         File selectedFile = fileChooser.showOpenDialog(mainApp.getPrimaryStage());
         if (selectedFile != null) {
             textAreaId.setText(new DataLoader().loadFromFile(selectedFile));
-            mainApp.getPrimaryStage().setTitle("NotePad - " + selectedFile.getName());
+            mainApp.getPrimaryStage().setTitle(String.format("%s - NotePad", selectedFile.getAbsolutePath()));
         }
     }
 
@@ -35,7 +36,7 @@ public class Controller {
         File savedFile = fileChooser.showSaveDialog(mainApp.getPrimaryStage());
         if (savedFile != null) {
             new DataSaver().saveToFile(savedFile, textAreaId.getText());
-            mainApp.getPrimaryStage().setTitle("NotePad - " + savedFile.getName());
+            mainApp.getPrimaryStage().setTitle(String.format("%s - NotePad", savedFile.getAbsolutePath()));
         }
 
     }
