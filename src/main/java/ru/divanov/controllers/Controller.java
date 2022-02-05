@@ -1,6 +1,5 @@
 package ru.divanov.controllers;
 
-import com.sun.javafx.binding.StringFormatter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
