@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.stage.FileChooser;
 import ru.divanov.NotePadApp;
+import ru.divanov.model.FileType;
 import ru.divanov.service.DataLoader;
 import ru.divanov.service.DataSaver;
 
@@ -45,8 +46,8 @@ public class Controller {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle(title);
         fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("Text files(*.txt)", "*.txt"),
-                new FileChooser.ExtensionFilter("Config files(*.ini)", "*.ini")
+                new FileChooser.ExtensionFilter("Text files(*.txt)", FileType.TXT.getFileType()),
+                new FileChooser.ExtensionFilter("Config files(*.ini)", FileType.INI.getFileType())
         );
         return fileChooser;
     }
