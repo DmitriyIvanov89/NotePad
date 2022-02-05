@@ -1,5 +1,6 @@
 package ru.divanov.controllers;
 
+import com.sun.javafx.binding.StringFormatter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
@@ -46,8 +47,8 @@ public class Controller {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle(title);
         fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("Text files(*.txt)", FileType.TXT.getFileType()),
-                new FileChooser.ExtensionFilter("Config files(*.ini)", FileType.INI.getFileType())
+                new FileChooser.ExtensionFilter(String.format("Text files(%s)", FileType.TXT.getFileType()), FileType.TXT.getFileType()),
+                new FileChooser.ExtensionFilter(String.format("Config files(%s)", FileType.INI.getFileType()), FileType.INI.getFileType())
         );
         return fileChooser;
     }

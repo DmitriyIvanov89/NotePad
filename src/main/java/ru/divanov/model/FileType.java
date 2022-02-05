@@ -2,7 +2,7 @@ package ru.divanov.model;
 
 public enum FileType {
     TXT("*.txt"),
-    INI(".*ini");
+    INI("*.ini");
 
     private final String fileType;
 
