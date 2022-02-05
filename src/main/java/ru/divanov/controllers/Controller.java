@@ -28,7 +28,7 @@ public class Controller {
         File selectedFile = fileChooser.showOpenDialog(mainApp.getPrimaryStage());
         if (selectedFile != null) {
             textAreaId.setText(new DataLoader().loadFromFile(selectedFile));
-            mainApp.getPrimaryStage().setTitle(String.format("%s - NotePad", selectedFile.getAbsolutePath()));
+            mainApp.getPrimaryStage().setTitle(String.format("%s - %s", selectedFile.getAbsolutePath(), mainApp.getTitle()));
         }
     }
 
@@ -38,7 +38,7 @@ public class Controller {
         File savedFile = fileChooser.showSaveDialog(mainApp.getPrimaryStage());
         if (savedFile != null) {
             new DataSaver().saveToFile(savedFile, textAreaId.getText());
-            mainApp.getPrimaryStage().setTitle(String.format("%s - NotePad", savedFile.getAbsolutePath()));
+            mainApp.getPrimaryStage().setTitle(String.format("%s - %s", savedFile.getAbsolutePath(), mainApp.getTitle()));
         }
 
     }

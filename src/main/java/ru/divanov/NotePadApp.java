@@ -13,7 +13,7 @@ import java.io.IOException;
 public class NotePadApp extends Application {
 
     private Stage primaryStage;
-    private final static String TITLE = "NotePad";
+    private final String title = "NotePad";
 
     public static void main(String[] args) {
         launch(args);
@@ -30,7 +30,7 @@ public class NotePadApp extends Application {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/NotePad.fxml"));
             BorderPane rootLayOut = loader.load();
             primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/img/icon.png")));
-            primaryStage.setTitle(TITLE);
+            primaryStage.setTitle(title);
             primaryStage.setScene(new Scene(rootLayOut));
             Controller controller = loader.getController();
             controller.setMainApp(this);
@@ -42,5 +42,9 @@ public class NotePadApp extends Application {
 
     public Stage getPrimaryStage() {
         return primaryStage;
+    }
+
+    public String getTitle() {
+        return title;
     }
 }
