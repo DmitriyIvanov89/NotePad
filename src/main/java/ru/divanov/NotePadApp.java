@@ -30,6 +30,9 @@ public class NotePadApp extends Application {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/NotePad.fxml"));
             BorderPane rootLayOut = loader.load();
+            /*
+            * добавить исключение при .img = null
+            * */
             primaryStage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/img/icon.png"))));
             primaryStage.setTitle(title);
             primaryStage.setScene(new Scene(rootLayOut));
