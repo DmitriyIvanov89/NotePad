@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ru.divanov.controllers.Controller">
+    <center>
+        <AnchorPane prefHeight="300.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+            <children>
+                <TextArea layoutX="119.0" layoutY="22.0" prefHeight="200.0" prefWidth="200.0"
+                          AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
+                          AnchorPane.topAnchor="10.0" fx:id="textAreaId"/>
+            </children>
+        </AnchorPane>
+    </center>
+    <top>
+        <ButtonBar maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                   nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="200.0"
+                   BorderPane.alignment="CENTER_LEFT">
+            <buttons>
+                <Button mnemonicParsing="false" onAction="#saveToFile" prefHeight="30.0" prefWidth="100.0"
+                        text="Save to file"/>
+                <Button mnemonicParsing="false" onAction="#openFile" prefHeight="30.0" prefWidth="100.0"
+                        text="Open file"/>
+            </buttons>
+            <BorderPane.margin>
+                <Insets left="10.0"/>
+            </BorderPane.margin>
+        </ButtonBar>
+    </top>
+</BorderPane>

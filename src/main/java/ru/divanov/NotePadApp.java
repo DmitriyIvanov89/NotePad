@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 import ru.divanov.controllers.Controller;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class NotePadApp extends Application {
 
@@ -29,7 +30,7 @@ public class NotePadApp extends Application {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/NotePad.fxml"));
             BorderPane rootLayOut = loader.load();
-            primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/img/icon.png")));
+            primaryStage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/img/icon.png"))));
             primaryStage.setTitle(title);
             primaryStage.setScene(new Scene(rootLayOut));
             Controller controller = loader.getController();
